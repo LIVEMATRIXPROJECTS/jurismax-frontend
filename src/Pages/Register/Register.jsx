@@ -1,29 +1,39 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./register.css";
-import { CiUser } from "react-icons/ci";
+// import { CiUser } from "react-icons/ci";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 
 import { registerformValidation } from "../../utils/formValidation";
+import axios from "axios";
+import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 
 const Register = () => {
   const [username, setUsername] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState({});
   const [showpassword, setShowPassword] = useState(false);
+  const navigate=useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post("http://localhost:3001/register",{username,Email,password,confirmPassword})
+    .then(result=> {console.log(result)
+      navigate("/login")
+    })
+    .catch(err=>console.log(err))
+
     setError({});
     setTimeout(() => {
-      const result = registerformValidation(
+      const results = registerformValidation(
         username,
-        phoneNumber,
+        Email,
         password,
         confirmPassword
       );
-      setError(result);
+      setError(results);
     }, 3000);
   };
   return (
@@ -54,23 +64,23 @@ const Register = () => {
         <div className="inputContainer">
           <div className="inputWrapper">
             <input
-              type="text"
-              id="phoneNumber"
-              value={phoneNumber}
-              className={`${error.phonenumber && "error"}`}
+              type="Email"
+              id="Email"
+              value={Email}
+              className={`${error.Email && "error"}`}
               autoComplete="off"
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label
-              htmlFor="phoneNumber"
+              htmlFor="Email"
               className={
-                phoneNumber.length > 0 ? "validPlaceHolder" : "placeHolder"
+                Email.length > 0 ? "validPlaceHolder" : "placeHolder"
               }
             >
-              Phone Number
+              Email
             </label>
           </div>
-          {error.phonenumber && <span>{error.phonenumber}</span>}
+          {error.Email && <span>{error.Email}</span>}
         </div>
         <div className="inputContainer">
           <div className="inputWrapper">
@@ -131,7 +141,11 @@ const Register = () => {
           </p>
         </div>
         <input type="submit" value="Register" className="button_log" />
-      </form>
+        </form>
+        <p>Already have an Account</p>
+        <Link to="/login">
+        <input type="submit" value="login" className="button_log"/>
+        </Link>
     </div>
   );
 };

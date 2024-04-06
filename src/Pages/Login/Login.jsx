@@ -2,15 +2,30 @@ import React, { useState } from "react";
 import { loginformValidation } from "../../utils/formValidation";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
+
 const Login = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({});
   const [showpassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const result = loginformValidation(phoneNumber, password);
+    axios
+      .post("http://localhost:3001/login", { Email, password })
+      .then((result) => {
+        console.log(result);
+        if (result.data === "Success") {
+          navigate("/Home");
+        }
+      })
+      .catch((err) => console.log(err));
+
+    const result = loginformValidation(Email, password);
     setError(result);
   };
   return (
@@ -21,23 +36,21 @@ const Login = () => {
         <div className="inputContainer">
           <div className="inputWrapper">
             <input
-              type="text"
-              id="phoneNumber"
-              value={phoneNumber}
+              type="Email"
+              id="Email"
+              value={Email}
               autoComplete="off"
-              className={`${error.phonenumber && "error"}`}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              className={`${error.Email && "error"}`}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label
-              htmlFor="phoneNumber"
-              className={
-                phoneNumber.length > 0 ? "validPlaceHolder" : "placeHolder"
-              }
+              htmlFor="Email"
+              className={Email.length > 0 ? "validPlaceHolder" : "placeHolder"}
             >
-              Phone Number
+              Email
             </label>
           </div>
-          {error.phonenumber && <span>{error.phonenumber}</span>}
+          {error.Email && <span>{error.Email}</span>}
         </div>
         <div className="inputContainer">
           <div className="inputWrapper">
@@ -80,7 +93,9 @@ const Login = () => {
             Not have an account ?<Link to={"/register"}>Register</Link>
           </p>
         </div>
-        <input type="submit" value="Login" className="button_log" />
+        <Link to="/Home">
+          <input type="submit" value="Login" className="button_log" />
+        </Link>
       </form>
     </div>
   );

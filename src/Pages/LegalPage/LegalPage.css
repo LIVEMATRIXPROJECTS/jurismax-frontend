@@ -1,0 +1,221 @@
+/* .pageNotFoundContainer {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.pageNotFoundContainer .pageChild {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.pageNotFoundContainer .pageChild img {
+  max-width: 700px;
+}
+
+.pageNotFoundContainer .pageChild h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #314e57;
+  font-family: "Single Day", cursive;
+}
+.pageNotFoundContainer .pageChild .pageNot_button {
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  outline: none;
+  text-transform: uppercase;
+  border: none;
+  background-color: #3ca981;
+
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.pageNotFoundContainer .pageChild .pageNot_button {
+  color: white;
+}
+
+.pageNotFoundContainer .pageChild .pageNot_button:hover {
+  background: #41978d;
+} */
+
+.legal-containers{
+  background-color: #ffffff;
+  height:100vh;
+  width:100vw;
+  
+}
+
+.legal-container{
+  text-align: center;
+  border:solid 1px black;
+  background-color: black;
+  color:white;
+  margin-top: 10px;
+}
+
+.title{
+  color: #ffffff;
+  /* font-family:"Roboto"; */
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.legal-cards{
+  /* background-color: azure; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+@media screen and (min-width:769px){
+  .legal-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+.legal-card{
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  margin-top: 28px;
+}
+
+.heading{
+  text-align: center;
+  border: solid 2px black;
+}
+
+.paragraph{
+  /* font-family: "Roboto"; */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.paragraph1{
+  /* font-family: "Roboto"; */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.image1{
+  height:28vh;
+  width:14vw;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.image2{
+  height:28vh;
+  width:18vw;
+  margin-top: 10px;
+}
+
+.heading1{
+  /* font-family: "Roboto"; */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.image-card{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: center; */
+}
+.icons{
+  padding-right: 20px;
+  padding: 10px;
+  /* margin-left: 20px; */
+}
+
+.card1{
+  margin-right: 200px;
+}
+.card1 li{
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.image{
+  height:90px;
+  width:90px;
+}
+
+@media screen and (min-width:992px){
+  .icons{
+    padding-right: 18PX;
+    margin-left: 28PX;
+  }
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.headings{
+  text-align: center;
+  border: solid 2px black;
+  margin-top: 10px;
+}
+
+.legals-card{
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  width:95vw;
+  text-align: center;
+}
+
+/* .button{
+  background-color: #ffffff;
+  padding: 10px;
+  border:solid 2px black;
+  border-radius: 16px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+} */
+
+.button1{
+  background-color: #ffffff;
+  padding: 10px;
+  border:solid 2px black;
+  border-radius: 16px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color:black;
+}
+
+
+
+
+

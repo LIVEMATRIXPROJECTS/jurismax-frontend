@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 const Protected = () => {
-  const login = false;
+  const login = true;
   return <>{login ? <Outlet /> : <Navigate to={"/login"} />}</>;
 };
 

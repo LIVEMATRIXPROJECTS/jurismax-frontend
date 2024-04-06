@@ -30,18 +30,33 @@ const Navbar = () => {
           </li>
           <div className="navList">
             <li>
-              <Link to="/reports">TITLE INVESTIGATION REPORT </Link>
+              <a href="/legalpage" target="_blank">
+                LEGAL OPINION
+              </a>
             </li>
-            <li>SERVICES</li>
+            <li>LEGAL DRAFTING</li>
+            <li>KEY DOCUMENTS</li>
+            <li>RESOURCE/ARTICLES</li>
             <li onClick={() => setHamburger(false)}>
               <Link to={"/login"}>LOGIN</Link>
             </li>
+
+            {
+              name?
+              (<Link to="/"><li>Logout</li></Link>) : (<Link to="/"><li>Login</li></Link>)
+            }
           </div>
         </ul>
         {hamburger && (
           <div className="mobileList">
-            <li>TITLE INVESTIGATION REPORT</li>
-            <li>SERVICES</li>
+            <li>
+              <a href="/legalpage" target="_blank">
+                LEGAL OPINION
+              </a>
+            </li>
+            <li>LEGAL DRAFTING</li>
+            <li>KEY DOCUMENTS</li>
+            <li>RESOURCE/ARTICLES</li>
             <li onClick={() => setHamburger(false)}>
               <Link to={"/login"}>LOGIN</Link>
             </li>
