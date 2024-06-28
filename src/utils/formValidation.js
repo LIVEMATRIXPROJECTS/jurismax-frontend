@@ -7,7 +7,7 @@ const phoneNumberRegex = /^[0-9]{10,14}$/;
 
 export const registerformValidation = (
   username,
-  phonenumber,
+  email,
   password,
   confirmPassword
 ) => {
@@ -17,27 +17,27 @@ export const registerformValidation = (
     formError.username = "Username is required !";
   } else if (!usernameRegex.test(username)) {
     formError.username =
-      "Username should be 4 to 8 characters , start with min 3 alphabates , no special characters allowed !";
+      "Username should be 4 to 8 characters , start with min 3 alphabets , no special characters allowed !";
   } else {
     formError.username = "";
   }
   // phone validation
-  if (phonenumber === "") {
-    formError.phonenumber = "Phone number is required !";
-  } else if (!phoneNumberRegex.test(phonenumber)) {
-    formError.phonenumber = "Please enter a valid phone number !";
-  } else {
-    formError.phonenumber = "";
-  }
+  // if (phonenumber === "") {
+  //   formError.phonenumber = "Phone number is required !";
+  // } else if (!phoneNumberRegex.test(phonenumber)) {
+  //   formError.phonenumber = "Please enter a valid phone number !";
+  // } else {
+  //   formError.phonenumber = "";
+  // }
   // email Validation
 
-  //   if (email === "") {
-  //     formError.email = "Email is required";
-  //   } else if (!emailRegex.test(email)) {
-  //     formError.email = "Please enter a valid email";
-  //   } else {
-  //     formError.email = "";
-  //   }
+    if (email === "") {
+      formError.email = "Email is required";
+    } else if (!emailRegex.test(email)) {
+      formError.email = "Please enter a valid email";
+    } else {
+      formError.email = "";
+    }
 
   // password Validation
 
@@ -53,7 +53,7 @@ export const registerformValidation = (
   //confirm password Validation
 
   if (confirmPassword === "") {
-    formError.confirmpassword = "Please confirm your password !";
+    formError.confirmpassword = "Please confirm your password!";
   } else if (confirmPassword !== password) {
     formError.confirmpassword = " Password not match !";
   } else {

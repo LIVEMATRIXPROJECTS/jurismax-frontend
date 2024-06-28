@@ -126,8 +126,7 @@ const Email = () => {
 
   
   return (
-        <div>
-        {/* <h1 className="form-heading">Submit your Request</h1> */}
+        <div className="containers">
         <div className="container">
           <form ref={form} onSubmit={sendEmail} >
             
@@ -135,7 +134,7 @@ const Email = () => {
             <div><input type="text"   placeholder='Full Name'  name='user_name' className="input1" required/></div>
             <div><input type="Email" placeholder='Email' name='user_email' className="input1"  required/></div>
             <div><input type="text"   placeholder='Subject' name='Subject' className="input1"    required/></div>
-            <div><textarea name="message"  cols="30" rows="10"   ></textarea></div>
+            {/* <div><textarea name="message"  cols="30" rows="10"></textarea></div> */}
             <div><button onSubmit={sendEmail}>Submit Here</button></div>
                
           </form>

@@ -49,6 +49,7 @@ const Register = () => {
               value={username}
               autoComplete="off"
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
             <label
               htmlFor="name"
@@ -70,6 +71,7 @@ const Register = () => {
               className={`${error.Email && "error"}`}
               autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label
               htmlFor="Email"
@@ -91,6 +93,7 @@ const Register = () => {
               autoComplete="off"
               className={`${error.password && "error"}`}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <label
               htmlFor="password"
@@ -141,11 +144,12 @@ const Register = () => {
           </p>
         </div>
         <input type="submit" value="Register" className="button_log" />
-        </form>
-        <p>Already have an Account</p>
+        <p>Already have an Account?</p>
+        {/* <input type="submit" value="login" className="button_log"/> */}
         <Link to="/login">
-        <input type="submit" value="login" className="button_log"/>
+        <input type="submit" value="login" className="button_log"/> 
         </Link>
+        </form>
     </div>
   );
 };

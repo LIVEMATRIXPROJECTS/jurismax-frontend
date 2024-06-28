@@ -20,7 +20,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
-          navigate("/Home");
+          navigate("/");
         }
       })
       .catch((err) => console.log(err));
@@ -42,6 +42,7 @@ const Login = () => {
               autoComplete="off"
               className={`${error.Email && "error"}`}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label
               htmlFor="Email"
@@ -61,6 +62,7 @@ const Login = () => {
               className={`${error.password && "error"}`}
               autoComplete="off"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <label
               htmlFor="password"
@@ -93,9 +95,10 @@ const Login = () => {
             Not have an account ?<Link to={"/register"}>Register</Link>
           </p>
         </div>
-        <Link to="/Home">
+        <input type="submit" value="Login" className="button_log" />
+        {/* <Link to="/">
           <input type="submit" value="Login" className="button_log" />
-        </Link>
+        </Link> */}
       </form>
     </div>
   );

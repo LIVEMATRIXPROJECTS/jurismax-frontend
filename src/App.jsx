@@ -13,6 +13,10 @@ import LegalPage from "./Pages/LegalPage/LegalPage";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import Payment from "./Components/Payments/Payment";
 import File from "./Components/Files/Files";
+import Nbfc from "./Pages/NbfcPage/Nbfc";
+import Banks from "./Pages/BanksPage/Banks";
+import KeysPage from "./Components/KeysPage/KeysPage";
+import Pagekeys from "./Components/Pagekeys/Pagekeys";
 // import { AuthProvider } from "./Components/Auth/Auth";
 
 function App() {
@@ -30,7 +34,11 @@ function App() {
 
         <Route path="/legalpage" element={<LegalPage />} />
         <Route path="/payment" element={<Payment/>}/>
-        <Route path="File" element={<File/>}/>
+        <Route path="/File" element={<File/>}/>
+        <Route path="/Nbfc" element={<Nbfc/>}/>
+        <Route path="/Banks" element={<Banks/>}/>
+        <Route path="/Keyspage" element={<KeysPage/>}/>
+        <Route path="/pagekeys" element={<Pagekeys/>}/>
       </Routes>
      
     </div>
